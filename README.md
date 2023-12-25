@@ -15,3 +15,7 @@ IndexedString is a Swift Package that contains the String extension. It will mak
 - Convenient implementation of operations of insertion by index, cut, delete, replace part of a string.
 - Visual presentation of the collection of extended grapheme clusters in a string and all Unicode value scalars that make up the string.
 - All functionality of the String type remains unchanged.
+
+### Limitations
+
+- It is not possible to change the value by index, only get.
