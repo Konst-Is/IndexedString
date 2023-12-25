@@ -65,6 +65,7 @@ the array contains the remaining part of the string, e.g. ["aa", "aa", "a"]. */
 
 ```swift
 import IndexedString
+import Foundation
 
 var str = "cafe" + "\u{301}"
 print(str) // café
