@@ -3,7 +3,7 @@
 A string in Swift is a collection of extended grapheme clusters, each of which forms one human-readable character. 
 In turn, each extended grapheme cluster is a collection of Unicode scalar values.
 
-If a single character or grapheme cluster consisted of a single Unicode scalar value, then the String type would have a subscript that accepts an integer index. But since this collection may contain several Unicode scalar values that are combined with each other, there are situations when using an integer subscript may cause errors.
+If a single character or extended grapheme cluster consisted of a single Unicode scalar value, then the String type would have a subscript that accepts an integer index. But since this collection may contain several Unicode scalar values that are combined with each other, there are situations when using an integer subscript may cause errors.
 
 For this reason, the standard String type in Swift has a subscript that takes the String.Index type instead of Int. In order to access a character in a string by such an index, you have to write cumbersome and inconvenient constructions.
 
