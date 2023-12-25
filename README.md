@@ -71,9 +71,9 @@ print(str) // café
 print(str[3]) // é
 print(str[4]) // there is no such index in the string. The result is an empty string.
 print(str.fromUnicodeScalars) // "\u{63}\u{61}\u{66}\u{65}\u{301}"
+print("\u{63}\u{61}\u{66}\u{65}\u{301}") // café
 print(str.extendedGraphemeClusters) // [\u{63}] - [\u{61}] - [\u{66}] - [\u{65}\u{301}]
 print(str[3].fromUnicodeScalars) // "\u{65}\u{301}"
-print("\u{65}\u{301}") // café
 print(str.firstIndex(of: "a") ?? "nil") // 1
 print(str.firstIndex(of: "e") ?? "nil") // nil
 
