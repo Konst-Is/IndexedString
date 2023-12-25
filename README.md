@@ -1,6 +1,6 @@
 # IndexedString - an extension to String that allows you to use an integer subscript 
 
-A String in Swift is a collection of extended grapheme clusters, each of which forms one human-readable character. 
+A string in Swift is a collection of extended grapheme clusters, each of which forms one human-readable character. 
 In turn, each extended grapheme cluster is a collection of Unicode scalar values.
 
 If a single character or grapheme cluster consisted of a single Unicode scalar value, then the String type would have a subscript that accepts an integer index. But since this collection may contain several Unicode scalar values that are combined with each other, there are situations when using an integer subscript may cause errors.
