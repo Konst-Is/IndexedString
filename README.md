@@ -56,7 +56,7 @@ splitIntoChunks(thick: Int) -> [String] /* converts a string into an array of st
 the specified size. If the string is not split into equal parts, the last element of
 the array contains the remaining part of the string, e.g. ["aa", "aa", "a"]. */
 ```
-### How to integrate IndexedLinkedList into your project
+### How to integrate IndexedString into your project
 
 - Open your project in XCode, in the project settings open the Package Dependencies tab, click + , paste the link "https://github.com/Konst-Is/IndexedString.git" into the search box and click "Add Package".
 - In the file where you will use IndexedString, add "import IndexedString".
