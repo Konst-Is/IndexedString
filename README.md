@@ -19,3 +19,20 @@ IndexedString is a Swift Package that contains the String extension. It will mak
 ### Limitations
 
 - It is not possible to change the value by index, only get.
+
+### Additional features of API String
+
+```swift
+public extension String {}
+
+fromUnicodeScalars /* forms a string consisting of all Unicode scalar values in the string, e.g. "\u{63}\u{61}\u{66}\u{65}\u{301}". If you send this string to print, you will get café. */
+extendedGraphemeClusters /* forms a visual representation of the extended grapheme clusters that make up the string, e.g. [\u{63}] - [\u{61}] - [\u{66}] - [\u{65}\u{301}]. */
+subscript(index: Int) -> String /* returns an extended grapheme cluster (character) of String type by index. Checking the validity of the index, as in Array, is the responsibility of the programmer. If you enter an index outside the range (0..<count) or the string is empty, you will get a runtime error. */
+firstIndex(of symbol: String) -> Int? /* returns the optional first index of an individual character of type String in the string. */
+getSubstring(from index1: Int, to index2: Int) -> String /*  returns a string of type String cut from the original string between the specified indices. Checking the validity of the indices is the responsibility of the programmer. If you enter invalid indices or the string is empty, you will get a runtime error. */
+removeSubrange(from index1: Int, to index2: Int) -> String /* deletes the part of the string between the specified indices and returns the cut part of the string of type String. Checking the validity of the indices is the responsibility of the programmer. If you enter invalid indices or the string is empty, you will get a runtime error. */
+replaceSubrange(from index1: Int, to index2: Int, with str: String) -> String /* replaces the part of the string between the specified indices with a new one and returns the replaced part of the string of type String. Checking the validity of the indices is the responsibility of the programmer. If you enter invalid indices or the string is empty, you will get a runtime error. */
+insert(by index: Int, str: String) /* inserts a new part of the string at the specified index. Checking the validity of the index, as in Array, is the responsibility of the programmer. If you enter an index outside the range (0..<count) or the string is empty, you will get a runtime error. */
+splitIntoChunks(thick: Int) -> [String] /* converts a string into an array of strings of the specified size. If the string is not split into equal parts, the last element of the array contains the remaining part of the string, e.g. ["aa", "aa", "a"]. */
+```
+
