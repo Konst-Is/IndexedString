@@ -7,4 +7,4 @@ If a single character or extended grapheme cluster consisted of a single Unicode
 
 For this reason, the standard String type in Swift has a subscript that takes the `String.Index` type instead of `Int`. In order to access a character in a string by such an index, you have to write cumbersome and inconvenient constructions.
 
-IndexedString is a Swift package that contains the String extension. It will make your work with String more convenient. You will get the ability to use integer subscript. As a result, operations like cut, delete, replace part of a string are performed very conveniently. In addition, visual presentation of a collection of extended grapheme clusters in String is implemented.
+IndexedString is a Swift Package that contains the String extension. It will make your work with String more convenient. You will get the ability to use integer subscript. As a result, operations like cut, delete, replace part of a string are performed very conveniently. In addition, visual presentation of a collection of extended grapheme clusters in String is implemented.
