@@ -24,7 +24,7 @@ public extension String {
     
     subscript(index: Int) -> String {
         get {
-            guard !isEmpty, (0..<count).contains(index) else { fatalError() }
+            guard !isEmpty, (0..<count).contains(index) else { return "" }
             return self.map { String($0) }[index]
         }
         
@@ -43,7 +43,7 @@ public extension String {
     }
     
     func getSubstring(from index1: Int, to index2: Int) -> String {
-        guard !isEmpty, (0..<index2).contains(index1), (index1..<count).contains(index2) else { fatalError() }
+        guard !isEmpty, (0..<index2).contains(index1), (index1..<count).contains(index2) else { return "" }
         var substring = ""
         for (i, char) in self.enumerated() where (index1...index2).contains(i) {
             substring += String(char)
@@ -53,7 +53,7 @@ public extension String {
     
     @discardableResult
     mutating func removeSubrange(from index1: Int, to index2: Int) -> String {
-        guard !isEmpty, (0..<index2).contains(index1), (index1..<count).contains(index2) else { fatalError() }
+        guard !isEmpty, (0..<index2).contains(index1), (index1..<count).contains(index2) else { return "" }
         var str = ""
         var substring = ""
         for (i, char) in self.enumerated() {
@@ -69,7 +69,7 @@ public extension String {
     
     @discardableResult
     mutating func replaceSubrange(from index1: Int, to index2: Int, with str: String) -> String {
-        guard !isEmpty, (0..<index2).contains(index1), (index1..<count).contains(index2) else { fatalError() }
+        guard !isEmpty, (0..<index2).contains(index1), (index1..<count).contains(index2) else { return "" }
         var leftStr = ""
         var rightStr = ""
         var substring = ""
@@ -86,7 +86,7 @@ public extension String {
     }
     
     mutating func insert(by index: Int, str: String) {
-        guard !isEmpty, (0..<count).contains(index) else { fatalError() }
+        guard !isEmpty, (0..<count).contains(index) else { return "" }
         var tempStr = ""
         for (i, char) in self.enumerated() {
             if i == index {
