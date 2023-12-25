@@ -32,26 +32,26 @@ that make up the string, e.g. [\u{63}] - [\u{61}] - [\u{66}] - [\u{65}\u{301}]. 
 subscript(index: Int) -> String /* returns an extended grapheme cluster (character) of
 String type by index. Checking the validity of the index, as in Array, is
 the responsibility of the programmer. If you enter an index outside the range (0..<count)
-or the string is empty, you will get a runtime error. */
+or the string is empty, you will get an empty string. */
 firstIndex(of symbol: String) -> Int? /* returns the optional first index of an individual
 character of type String in the string. */
 getSubstring(from index1: Int, to index2: Int) -> String /*  returns a string of type String
 cut from the original string between the specified indices. Checking the validity of the
 indices is the responsibility of the programmer. If you enter invalid indices or the string 
-is empty, you will get a runtime error. */
+is empty, you will get an empty string. */
 removeSubrange(from index1: Int, to index2: Int) -> String /* deletes the part of the string
 between the specified indices and returns the cut part of the string of type String.
 Checking the validity of the indices is the responsibility of the programmer. If you enter
-invalid indices or the string is empty, you will get a runtime error. */
+invalid indices or the string is empty, you will get an empty string. */
 replaceSubrange(from index1: Int, to index2: Int, with str: String) -> String /* replaces
 the part of the string between the specified indices with a new one and returns the replaced 
 part of the string of type String. Checking the validity of the indices is
 the responsibility of the programmer. If you enter invalid indices or the string is empty,
-you will get a runtime error. */
+you will get an empty string. */
 insert(by index: Int, str: String) /* inserts a new part of the string at the specified
-index. Checking the validity of the index, as in Array, is the responsibility of
-the programmer. If you enter an index outside the range (0..<count) or the string is empty,
-you will get a runtime error. */
+index. Checking the validity of the index is the responsibility of the programmer.
+If you enter an index outside the range (0..<count) or the string is empty, you will get 
+an empty string. */
 splitIntoChunks(thick: Int) -> [String] /* converts a string into an array of strings of
 the specified size. If the string is not split into equal parts, the last element of
 the array contains the remaining part of the string, e.g. ["aa", "aa", "a"]. */
@@ -61,6 +61,42 @@ the array contains the remaining part of the string, e.g. ["aa", "aa", "a"]. */
 - Open your project in XCode, in the project settings open the Package Dependencies tab, click + , paste the link "https://github.com/Konst-Is/IndexedString.git" into the search box and click "Add Package".
 - In the file where you will use IndexedString, add "import IndexedString".
 
+### Examples of work
+
+```swift
+import IndexedString
+
+var str = "cafe" + "\u{301}"
+print(str) // café
+print(str[3]) // é
+print(str[4]) // there is no such index in the string. The result is an empty string.
+print(str.fromUnicodeScalars) // "\u{63}\u{61}\u{66}\u{65}\u{301}"
+print(str.extendedGraphemeClusters) // [\u{63}] - [\u{61}] - [\u{66}] - [\u{65}\u{301}]
+print(str[3].fromUnicodeScalars) // "\u{65}\u{301}"
+print(str.firstIndex(of: "a") ?? "nil") // 1
+print(str.firstIndex(of: "e") ?? "nil") // nil
+
+str = "1234567890"
+let subStr = str.getSubstring(from: 3, to: 6)
+print(subStr) // 4567
+  
+let removeSubStr = str.removeSubrange(from: 3, to: 6)
+print(removeSubStr) // 4567
+print(str) // 123890
+
+str = "1234567890"
+let replacedSubStr = str.replaceSubrange(from: 3, to: 6, with: "0000")
+print(replacedSubStr) // 4567
+print(str) // 1230000890
+  
+str = "1234567890"
+str.insert(by: 3, str: "000")
+print(str) // 1230004567890
+
+str = "1234567890"
+print(str.splitIntoChunks(thick: 2)) // ["12", "34", "56", "78", "90"]
+print(str.splitIntoChunks(thick: 3)) // ["123", "456", "789", "0"]
+```
 
 
 
