@@ -86,7 +86,7 @@ public extension String {
     }
     
     mutating func insert(by index: Int, str: String) {
-        guard !isEmpty, (0..<count).contains(index) else { return self }
+        guard !isEmpty, (0..<count).contains(index) else { return }
         var tempStr = ""
         for (i, char) in self.enumerated() {
             if i == index {
