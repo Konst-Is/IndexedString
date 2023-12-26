@@ -51,8 +51,8 @@ invalid indices or the string is empty, the operation will fail and the method w
 an empty string. */
 
 replaceSubrange(from index1: Int, to index2: Int, with str: String) -> String /* replaces
-the part of the string between the specified indices with a new one and returns the replaced 
-part of the string of type String. Checking the validity of the indices is
+the part of the string between the specified indices with a new one and returns
+the replaced part of the string of type String. Checking the validity of the indices is
 the responsibility of the programmer. If you enter invalid indices or the string is empty,
 the operation will fail and the method will return an empty string. */
 
@@ -60,6 +60,7 @@ insert(by index: Int, str: String) /* inserts a new part of the string at the sp
 index. Checking the validity of the index is the responsibility of the programmer.
 If you enter an index outside the range (0..<count) or the string is empty, the operation 
 will fail. */
+
 splitIntoChunks(thick: Int) -> [String] /* converts a string into an array of strings of
 the specified size. If the string is not split into equal parts, the last element of
 the array contains the remaining part of the string, e.g. ["aa", "aa", "a"]. */
