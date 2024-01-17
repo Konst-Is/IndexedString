@@ -1,4 +1,4 @@
-# IndexedString - an extension to String that allows you to use an integer subscript 
+# IndexedString - an extension for String that allows you to use an integer subscript 
 
 A string in Swift is a collection of extended grapheme clusters, each of which forms one human-readable character. 
 In turn, each extended grapheme cluster is a collection of Unicode scalar values.
